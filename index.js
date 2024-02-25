@@ -6,6 +6,8 @@ const { v4: uuidv4 } = require("uuid");
 var gtts = require("node-gtts")("en");
 var path = require("path");
 
+app.use(express.static("voices"));
+
 app.get("/", (req, res) => {
   const id = uuidv4();
   const fileName = `${id}_voice.mp3`;
